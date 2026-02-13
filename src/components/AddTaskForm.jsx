@@ -2,7 +2,7 @@ import Button from "./Button";
 import Field from "./Field";
 
 const AddTastForm = (props) => {
-  const { addTask, newTaskTitle, setNewTaskTitle } = props;
+  const { addTask, newTaskTitle, setNewTaskTitle, newTaskInputRef } = props;
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -17,6 +17,7 @@ const AddTastForm = (props) => {
         id="new-task"
         value={newTaskTitle}
         onInput={(event) => setNewTaskTitle(event.target.value)}
+        ref={newTaskInputRef}
       />
       <Button type="submit">Add</Button>
     </form>
